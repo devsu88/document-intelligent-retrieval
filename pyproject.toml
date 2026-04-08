@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "document-intelligent-retrieval"
+version = "0.1.0"
+description = "RAG system for semantic document search and contextual Q&A over PDF knowledge bases."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "chromadb>=0.5.0",
+    "gradio>=5.0.0",
+    "langchain-text-splitters>=0.3.0",
+    "litellm>=1.0.0",
+    "openai>=1.0.0",
+    "pydantic>=2.0.0",
+    "pymupdf4llm>=0.0.1",
+    "python-dotenv>=1.0.0",
+    "tenacity>=8.0.0",
+    "tiktoken>=0.7.0",
+]
+
+[project.scripts]
+document-ir = "document_ir.ui.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
